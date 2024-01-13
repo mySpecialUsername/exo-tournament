@@ -1,7 +1,7 @@
 package me.guillaume.recruitment.tournament;
 
 public abstract class Weapon {
-    protected int damage;
+    private int damage;
     protected String kind;
 
     public Weapon(int damage, String kind) {
@@ -12,5 +12,7 @@ public abstract class Weapon {
     public int damage() {
         return this.damage;
     }
+
+    
 
 }
