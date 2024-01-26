@@ -1,4 +1,6 @@
-package me.guillaume.recruitment.tournament;
+package me.guillaume.recruitment.tournament.parry_tool;
+
+import me.guillaume.recruitment.tournament.weapon.Weapon;
 
 public class Buckler extends ParryTool {
     private int durability;
@@ -14,12 +16,16 @@ public class Buckler extends ParryTool {
     }
 
     public boolean tryToParry(Weapon weapon) {
-        this.parryAttempts++;
+        boolean success;
         if (this.parryAttempts % 2 == 0 && this.isFunctional()) {
-            if (weapon.kind.equals("axe"))
+            if (weapon.kindIs("axe"))
                 durability -= 1;
-            return true;
+            success = true;
         }
-        return false;
+        else {
+            success = false;
+        }
+        this.parryAttempts++;
+        return success;
     }
 }

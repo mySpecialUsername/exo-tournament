@@ -1,4 +1,4 @@
-package me.guillaume.recruitment.tournament;
+package me.guillaume.recruitment.tournament.weapon;
 
 public class Sword extends Weapon{
     public Sword() {

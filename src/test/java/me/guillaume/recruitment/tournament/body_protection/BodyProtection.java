@@ -1,4 +1,6 @@
-package me.guillaume.recruitment.tournament;
+package me.guillaume.recruitment.tournament.body_protection;
+
+import me.guillaume.recruitment.tournament.weapon.Weapon;
 
 public class BodyProtection{
 

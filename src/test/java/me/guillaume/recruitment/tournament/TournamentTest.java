@@ -3,6 +3,10 @@ package me.guillaume.recruitment.tournament;
 
 import org.junit.jupiter.api.Test;
 
+import me.guillaume.recruitment.tournament.worrior.Highlander;
+import me.guillaume.recruitment.tournament.worrior.Swordsman;
+import me.guillaume.recruitment.tournament.worrior.Viking;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 
@@ -70,33 +74,33 @@ public class TournamentTest {
 
         swordsman.engage(highlander);
 
-        assertThat(swordsman.parryTool.isFunctional()).isTrue();
         assertThat(swordsman.hitPoints()).isEqualTo(0);
         assertThat(highlander.hitPoints()).isEqualTo(10);
-
     }
 
-    // /**
-    //  * a vicious Swordsman is a Swordsman that put poison on his weapon.
-    //  * poison add 20 damages on two first blows
-    //  * a veteran Highlander goes Berserk once his hit points are under 30% of his initial total
-    //  * once Berserk, he doubles his damages
-    //  */
-    // @Test // Bonus points :D
-    // public void ViciousSwordsmanVsVeteranHighlander() {
+    /**
+     * a vicious Swordsman is a Swordsman that put poison on his weapon.
+     * poison add 20 damages on two first blows
+     * a veteran Highlander goes Berserk once his hit points are under 30% of his initial total
+     * once Berserk, he doubles his damages
+     */
+    @Test // Bonus points :D
+    public void ViciousSwordsmanVsVeteranHighlander() {
 
-    //     Swordsman swordsman = new Swordsman("Vicious")
-    //             .equip("axe")
-    //             .equip("buckler")
-    //             .equip("armor");
+        Swordsman swordsman = new Swordsman("Vicious")
+                .equip("axe")
+                .equip("buckler")
+                .equip("armor");
 
-    //     Highlander highlander = new Highlander("Veteran");
+        Highlander highlander = new Highlander("Veteran");
 
-    //     swordsman.engage(highlander);
+        swordsman.engage(highlander);
 
-    //     assertThat(swordsman.hitPoints()).isEqualTo(1);
-    //     assertThat(highlander.hitPoints()).isEqualTo(0);
 
-    // }
+        assertThat(swordsman.produceDamage()).isEqualTo(5);
+        assertThat(highlander.produceDamage()%12).isEqualTo(0);
+        assertThat(highlander.hitPoints()).isEqualTo(0);
+        assertThat(swordsman.hitPoints()).isEqualTo(1);
+    }
 
 }

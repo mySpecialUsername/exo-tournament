@@ -1,4 +1,6 @@
-package me.guillaume.recruitment.tournament;
+package me.guillaume.recruitment.tournament.parry_tool;
+
+import me.guillaume.recruitment.tournament.weapon.Weapon;
 
 public class ParryTool {
     
